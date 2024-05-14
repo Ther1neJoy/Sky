@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <title>Sky</title>
+  </head>
+  <body>
+    
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          logo
+        </div>
+        <div class="action1">
+          <div class="navigator">
+            <a>Home</a>
+            <a>Dashboard</a>
+          </div>
+          <div class="log-user">
+            <button onclick="openSignupForm()" id="signup-button">
+              Signup
+            </button>
+            <button onclick="openLoginForm()" id="login-button">
+              Login
+            </button>
+            <button onclick="logout()">
+              Logout
+            </button>
+          </div>
+        </div>
+        <div class="action2">
+          <div class="hamburger-bar-box">
+            <label for="menu-toggle">
+              <img src="svg/hamburger.svg" alt="" />
+            </label>
+            <input type="checkbox" id="menu-toggle"/>
+          </div>
+          <div class="menu-list">
+            <a href="#">Home</a>
+            <a href="#">Dashboard</a>
+            <a onclick="logout()">Logout</a>
+            <a onclick="openLoginForm()">Login</a>
+            <a onclick="openSignupForm()">Signup</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <section>
+      <div class="content-container">
+        <div class="feature-box">
+          <div class="image-slider-wrapper">
+            
+            <div class="image-container">
+              <img src="img/elnido.jpg" alt="" />
+              <div class="image-label">
+                el nido
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="img/Nacpan Beach.jpg" alt="" />
+              <div class="image-label">
+                Nacpan Beach
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="img/Puerto Princesa Underground River.jpg" alt="" />
+              <div class="image-label">
+                Puerto Princesa Underground River
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="img/Puerto Princesa.jpg" alt="" />
+              <div class="image-label">
+                Puerto Princesa
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="img/images.jpeg" alt="" />
+              <div class="image-label">
+                coron, palawan
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="about-place-box-wrapper">
+          <div class="about-place-box">
+            <h1>About Skyeefocus</h1>
+            <p>It is to explore the colorful nature where it stands for <br> "𝓣𝓸 𝓬𝓪𝓹𝓽𝓾𝓻𝓮 𝓽𝓱𝓮 𝓫𝓮𝓪𝓾𝓽𝔂 𝓸𝓯 𝓷𝓪𝓽𝓾𝓻𝓮".</p>
+          </div>
+        </div>
+      </div>
+      <div class="content-container">
+          
+      </div>
+    </section>
+    
+    
+    <div class="overlay" id="overlay"></div>
+    <div id="loginForm" class="form-popup">
+        <form class="form-container">
+            <h2>Login</h2>
+            <label for="uid"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uid" required>
+            
+            <label for="pwd"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="pwd" required>
+            <br>
+            <br>
+            <button type="submit" name="submit" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="closeLoginForm()">Close</button>
+        </form>
+    </div>
+    
+    <div id="signupForm" class="form-popup">
+        <form class="form-container">
+            <h2>Signup</h2>
+            <label for="uid"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uid" required>
+            
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+            
+            <label for="pwd"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="pwd" required>
+            
+            <label for="pwdRepeat"><b>Password Repeat</b></label>
+            <input type="password" placeholder="Repeat Password" name="pwdRepeat" required>
+            <br>
+            <br>
+            <button type="submit" name="submit" class="btn">Signup</button>
+            <button type="button" class="btn cancel" onclick="closeSignupForm()">Close</button>
+        </form>
+    </div>
+   <script type="text/javascript" charset="utf-8">
+      function openLoginForm() {
+          document.getElementById("overlay").style.display = "block";
+          document.getElementById("loginForm").style.display = "block";
+      }
+      
+      function closeLoginForm() {
+          document.getElementById("overlay").style.display = "none";
+          document.getElementById("loginForm").style.display = "none";
+      }
+      
+      function openSignupForm() {
+          document.getElementById("overlay").style.display = "block";
+          document.getElementById("signupForm").style.display = "block";
+      }
+      
+      function closeSignupForm() {
+          document.getElementById("overlay").style.display = "none";
+          document.getElementById("signupForm").style.display = "none";
+      }
+  
+      
+      function logout() {
+          alert("Logged out successfully!");
+          // Add your logout logic here
+      }
+    </script>
+    <script type="text/javascript" charset="utf-8">
+      document.getElementById("menu-toggle").addEventListener("change", function() {
+          var menuList = document.querySelector(".menu-list");
+          if (this.checked) {
+              menuList.classList.add("show");
+          } else {
+              menuList.classList.remove("show");
+          }
+      });
+    </script>
+  </body>
+ 
+</html>
